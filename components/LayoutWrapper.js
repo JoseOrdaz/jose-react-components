@@ -8,7 +8,7 @@ const LayoutWrapper = () => {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex-1 md:flex md:items-center md:gap-12">
-              <a className="block text-[#7843E6]" href="/">
+              <Link className="block text-[#7843E6]" href="/">
                 <span className="sr-only">Home</span>
 
                 <Image
@@ -19,7 +19,7 @@ const LayoutWrapper = () => {
                     alt="imagen"
                   />
                
-              </a>
+              </Link>
             </div>
 
             <div className="md:flex md:items-center">
