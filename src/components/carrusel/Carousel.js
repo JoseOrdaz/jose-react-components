@@ -1,7 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import Image from 'next/image';
 
-function Slider({ imagenes }) {
+
+
+
+function Slider() {
+
+
+  const imagenes = ["/foto.jpg", "/foto1.jpg", "/foto2.jpg"];
+
   const [imagenActual, setImagenActual] = useState(0);
   const cantidad = imagenes?.length;
 
@@ -54,9 +62,12 @@ function Slider({ imagenes }) {
                 className={imagenActual === index ? "slide active" : "slide"}
               >
                 {imagenActual === index && (
-                  <img
+                  <Image
                     className="rounded-xl"
                     key={index}
+                    width={900}
+                    height={900}
+
                     src={imagen}
                     alt="imagen"
                   />

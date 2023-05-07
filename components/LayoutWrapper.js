@@ -1,4 +1,5 @@
 import headerNavLinks from "../data/headerNavLinks";
+import Link from "next/link";
 
 const LayoutWrapper = () => {
   return (
@@ -32,20 +33,20 @@ const LayoutWrapper = () => {
 
               <div className="flex items-center gap-4">
                 <div className="sm:flex sm:gap-4">
-                  <a target="_blank"
+                    <Link 
                     className="rounded-md bg-[#7843E6] px-5 py-2.5 text-sm font-medium text-white shadow"
-                    href="https://github.com/JoseOrdaz"
-                  >
-                    GITHUB
-                  </a>
-
+                    target="_blank"
+                   href="https://github.com/JoseOrdaz">GITHUB</Link>
+                   
                   <div className="hidden sm:flex">
-                  <a target="_blank"
+                      <Link 
                       className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-[#7843E6]"
-                      href="https://portfolio.joseordaz.com/"
-                    >
-                      PORTFOLIO
-                    </a>
+                      target="_blank"
+
+                      href="https://portfolio.joseordaz.com/">
+                        PORTFOLIO
+                      </Link>
+                    
                   </div>
                 </div>
 
