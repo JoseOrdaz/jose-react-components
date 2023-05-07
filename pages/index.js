@@ -2,11 +2,15 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Carousel from "../src/components/carrusel/Carousel";
 import LayoutWrapper from "../components/LayoutWrapper";
-import { Code } from "@nextui-org/react";
 import Codemirror from "../src/components/codemirror/Codemirror";
+import React, { useState } from "react";
+import { sample } from "../src/components/codemirror/components";
+import Accordion from "../src/components/accordion/Accordion";
 
 export default function Home() {
   const mockImagenes = ["/foto.jpg", "/foto1.jpg", "/foto2.jpg"];
+  const [language, changeLanguage] = useState("jsx");
+  const [CarruselCode, SetCarruselCode] = useState(sample["carrusel"]);
 
   return (
     <div className={styles.container}>
@@ -18,8 +22,14 @@ export default function Home() {
       <LayoutWrapper></LayoutWrapper>
 
       <main className="max-w-4xl mx-auto py-24">
-          <Carousel imagenes={mockImagenes} />
-          <Codemirror />
+        <Carousel imagenes={mockImagenes} />
+
+        <details className="w-full mt-10   font-semibold text-white hover:text-black cursor-pointer hover:bg-gray-100 bg-[#7843E6] rounded-lg ring-1 ring-[#7843E6]">
+          <summary className="px-4 py-6">Click aquí para ver el código del componente</summary>
+          <p className="px-4 py-6 pt-0 -mt-4">
+            <Codemirror language={language} CarruselCode={CarruselCode} />
+          </p>
+        </details>
       </main>
 
       <footer className={styles.footer}>

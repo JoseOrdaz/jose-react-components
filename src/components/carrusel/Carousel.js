@@ -1,7 +1,5 @@
 import React from "react";
-import estilos from "./Slider.module.css";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function Slider({ imagenes }) {
   const [imagenActual, setImagenActual] = useState(0);
@@ -40,7 +38,7 @@ function Slider({ imagenes }) {
           </p>
         </div>
         <div
-          className={estilos.container}
+          className="carrusel"
           onMouseEnter={() => {
             setAutoPlay(false);
             clearTimeout(timeOut);
@@ -53,11 +51,7 @@ function Slider({ imagenes }) {
             return (
               <div
                 key={index}
-                className={
-                  imagenActual === index
-                    ? `${estilos.slide} ${estilos.active}`
-                    : estilos.slide
-                }
+                className={imagenActual === index ? "slide active" : "slide"}
               >
                 {imagenActual === index && (
                   <img
@@ -111,30 +105,30 @@ function Slider({ imagenes }) {
 
           <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
             <button
-            className={
-              imagenActual === 0
-                ? "w-3 h-3 rounded-full shadow-md bg-[#7843E6] hover:bg-gray-200"
-                : "w-3 h-3 rounded-full shadow-md bg-gray-100 hover:bg-gray-200"}
+              className={
+                imagenActual === 0
+                  ? "w-3 h-3 rounded-full shadow-md bg-[#7843E6] hover:bg-gray-200"
+                  : "w-3 h-3 rounded-full shadow-md bg-gray-100 hover:bg-gray-200"
+              }
               onClick={() => setImagenActual(0)}
             ></button>
             <button
-            className={
-              imagenActual === 1
-                ? "w-3 h-3 rounded-full shadow-md bg-[#7843E6] hover:bg-gray-200"
-                : "w-3 h-3 rounded-full shadow-md bg-gray-100 hover:bg-gray-200"}
+              className={
+                imagenActual === 1
+                  ? "w-3 h-3 rounded-full shadow-md bg-[#7843E6] hover:bg-gray-200"
+                  : "w-3 h-3 rounded-full shadow-md bg-gray-100 hover:bg-gray-200"
+              }
               onClick={() => setImagenActual(1)}
             ></button>
             <button
-            className={
-              imagenActual === 2
-                ? "w-3 h-3 rounded-full shadow-md bg-[#7843E6] hover:bg-gray-200"
-                : "w-3 h-3 rounded-full shadow-md bg-gray-100 hover:bg-gray-200"}
+              className={
+                imagenActual === 2
+                  ? "w-3 h-3 rounded-full shadow-md bg-[#7843E6] hover:bg-gray-200"
+                  : "w-3 h-3 rounded-full shadow-md bg-gray-100 hover:bg-gray-200"
+              }
               onClick={() => setImagenActual(2)}
             ></button>
-
           </div>
-
-          
         </div>
       </div>
     </>
