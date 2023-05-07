@@ -42,6 +42,4 @@ export const themes = {
 };
 
 export { default as sample } from "./codeblocks";
-export { default as Select } from "./Select";
-export { default as TopBar } from "./TopBar";
 export { default as Navbar } from "./Navbar";
