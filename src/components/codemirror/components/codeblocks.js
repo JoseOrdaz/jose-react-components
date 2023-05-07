@@ -209,8 +209,8 @@ function Slider() {
 
   return (
     <>
-      <div className="relative transform overflow-hidden min-w-xl rounded-lg bg-white text-left shadow-xl border-[#7843E6] border p-12 transition-all sm:w-full">
-        <div className="mx-auto max-w-xl text-center py-12">
+      <div className="relative transform overflow-hidden min-w-xl rounded-lg bg-white text-left shadow-xl border-[#7843E6] border p-8 transition-all sm:w-full">
+        <div className="mx-auto max-w-xl text-center py-8">
           <h2 className="text-4xl font-bold sm:text-5xl">Carrusel React</h2>
 
           <p className="mt-4 text-gray-300">
@@ -237,8 +237,8 @@ function Slider() {
                   <Image
                     className="rounded-xl"
                     key={index}
-                    width={900}
-                    height={900}
+                    width={1200}
+                    height={1200}
                     src={imagen}
                     alt="imagen"
                   />
@@ -246,46 +246,8 @@ function Slider() {
               </div>
             );
           })}
-          <button
-            className="absolute left-8 top-52  w-11 h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200"
-            onClick={anteriorImagen}
-          >
-            <svg
-              className=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:-translate-x-0.5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2.5"
-                d="M15 19l-7-7 7-7"
-              ></path>
-            </svg>
-          </button>
-          <button
-            className="absolute right-8 top-52 w-11 h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200"
-            onClick={siguienteImagen}
-          >
-            <svg
-              className=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:translate-x-0.5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2.5"
-                d="M9 5l7 7-7 7"
-              ></path>
-            </svg>
-          </button>
 
-          <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+          <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-2 left-1/2">
             <button
               className={
                 imagenActual === 0
@@ -311,6 +273,44 @@ function Slider() {
               onClick={() => setImagenActual(2)}
             ></button>
           </div>
+          <button
+            className="absolute left-4 top-1/3 sm:top-1/2  w-8 h-8 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200"
+            onClick={anteriorImagen}
+          >
+            <svg
+              className=" w-4 h-4 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:-translate-x-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2.5"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </button>
+          <button
+            className="absolute right-4 top-1/3 w-8 h-8 sm:top-1/2 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200"
+            onClick={siguienteImagen}
+          >
+            <svg
+              className=" w-4 h-4 sm: font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:translate-x-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2.5"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </button>
         </div>
       </div>
     </>
@@ -318,5 +318,27 @@ function Slider() {
 }
 
 export default Slider;
+
+ //CSS PERSONALIZADO
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+ 
+ 
+ .carrusel {display: flex;height: 650px;width: 100%;max-width: 1200px;position:relative;}
+ .carrusel .slide {opacity: 0;transition: opacity 3.5s ease-in-out;position:absolute;}
+ .carrusel .slide.active {opacity: 1;transition: opacity 3.5s ease-in-out;position:absolute;}
+ 
+ @media only screen and (max-width: 768PX) {
+   .carrusel {height: 350px;}
+ }
+ @media only screen and (max-width: 600px) {
+   .carrusel {height: 250px;}
+ }
+ @media only screen and (max-width: 468px) {
+   .carrusel {height: 180px;}
+ }
+
+
 `
 };

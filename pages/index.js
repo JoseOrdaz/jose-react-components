@@ -19,7 +19,7 @@ export default function Home() {
       </Head>
       <LayoutWrapper></LayoutWrapper>
 
-      <main className="max-w-4xl mx-auto py-24">
+      <main className="max-w-6xl mx-auto py-24">
         <Carousel  />
 
         <details className="w-full mt-10   font-semibold text-white hover:text-black cursor-pointer hover:bg-gray-100 bg-[#7843E6] rounded-lg ring-1 ring-[#7843E6]">

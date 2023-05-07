@@ -3,6 +3,26 @@
 @tailwind utilities;
 
 
-.carrusel {display: flex;height: 450px;width: 100%;max-width: 800px;position:relative;}
-.carrusel .slide {opacity: 0;transition: opacity 3.5s ease-in-out;position:relative;}
-.carrusel .slide.active {opacity: 1;transition: opacity 3.5s ease-in-out;}
+.carrusel {display: flex;height: 650px;width: 100%;max-width: 1200px;position:relative;}
+.carrusel .slide {opacity: 0;transition: opacity 3.5s ease-in-out;position:absolute;}
+.carrusel .slide.active {opacity: 1;transition: opacity 3.5s ease-in-out;position:absolute;}
+
+
+@media only screen and (max-width: 768PX) {
+  .carrusel {height: 350px;}
+
+
+}
+
+@media only screen and (max-width: 600px) {
+  .carrusel {height: 250px;}
+
+
+}
+
+
+@media only screen and (max-width: 468px) {
+  .carrusel {height: 180px;}
+
+
+}
