@@ -4,18 +4,18 @@ import Image from "next/image";
 const LayoutWrapper = () => {
   return (
     <>
-      <header aria-label="Site Header" className="bg-white">
+      <header aria-label="Site Header" className="shadow-2xl ">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex-1 md:flex md:items-center md:gap-12">
-              <Link className="block text-[#7843E6]" href="/">
+              <Link className="block text-[#8c3cfc ]" href="/">
                 <span className="sr-only">Home</span>
 
                 <Image
                     className="max-w-sm w-full p-5"
-                    width={300}
-                    height={900}
-                    src="/logo-josereact.png" 
+                    width={100}
+                    height={100}
+                    src="/logo-react.png" 
                     alt="imagen"
                   />
                

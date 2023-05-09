@@ -32,16 +32,17 @@ function Slider() {
 
   return (
     <>
-      <div className="relative transform overflow-hidden min-w-xl rounded-lg bg-white text-left shadow-xl border-[#7843E6] border p-8 transition-all sm:w-full">
-        <div className="mx-auto max-w-xl text-center py-8">
-          <h2 className="text-4xl font-bold sm:text-5xl">Carrusel React</h2>
-
-          <p className="mt-4 text-gray-300">
+      <div className="relative transform overflow-hidden min-w-xl rounded-lg bg-white text-left shadow-xl p-12 transition-all sm:w-full">
+        <div className="mx-auto max-w-2xl text-center py-8">
+          <h1 class="font-extrabold text-transparent text-6xl bg-clip-text bg-gradient-to-r from-[#3163fa] via-[#8c3cfc] to-slate-900">
+            Carrusel simple con React + Taiwind
+          </h1>
+          <p className="mt-4 text-xl text-gray-600">
             Un componente hecho en react para un carrusel de imagenes.
           </p>
         </div>
         <div
-          className="carrusel"
+          className="relative flex "
           onMouseEnter={() => {
             setAutoPlay(false);
             clearTimeout(timeOut);
@@ -54,7 +55,11 @@ function Slider() {
             return (
               <div
                 key={index}
-                className={imagenActual === index ? "slide active" : "slide"}
+                className={
+                  imagenActual === index
+                    ? "slide active animate-fade-left"
+                    : "slide"
+                }
               >
                 {imagenActual === index && (
                   <Image
@@ -70,32 +75,6 @@ function Slider() {
             );
           })}
 
-          <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-2 left-1/2">
-            <button
-              className={
-                imagenActual === 0
-                  ? "w-3 h-3 rounded-full shadow-md bg-[#7843E6] hover:bg-gray-200"
-                  : "w-3 h-3 rounded-full shadow-md bg-gray-100 hover:bg-gray-200"
-              }
-              onClick={() => setImagenActual(0)}
-            ></button>
-            <button
-              className={
-                imagenActual === 1
-                  ? "w-3 h-3 rounded-full shadow-md bg-[#7843E6] hover:bg-gray-200"
-                  : "w-3 h-3 rounded-full shadow-md bg-gray-100 hover:bg-gray-200"
-              }
-              onClick={() => setImagenActual(1)}
-            ></button>
-            <button
-              className={
-                imagenActual === 2
-                  ? "w-3 h-3 rounded-full shadow-md bg-[#7843E6] hover:bg-gray-200"
-                  : "w-3 h-3 rounded-full shadow-md bg-gray-100 hover:bg-gray-200"
-              }
-              onClick={() => setImagenActual(2)}
-            ></button>
-          </div>
           <button
             className="absolute left-4 top-1/3 sm:top-1/2  w-8 h-8 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200"
             onClick={anteriorImagen}
@@ -134,6 +113,32 @@ function Slider() {
               ></path>
             </svg>
           </button>
+        </div>
+        <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-4 left-1/2">
+          <button
+            className={
+              imagenActual === 0
+                ? "w-3 h-3 rounded-full shadow-md bg-[#8c3cfc ] hover:bg-gray-200"
+                : "w-3 h-3 rounded-full shadow-md bg-gray-100 hover:bg-gray-200"
+            }
+            onClick={() => setImagenActual(0)}
+          ></button>
+          <button
+            className={
+              imagenActual === 1
+                ? "w-3 h-3 rounded-full shadow-md bg-[#8c3cfc ] hover:bg-gray-200"
+                : "w-3 h-3 rounded-full shadow-md bg-gray-100 hover:bg-gray-200"
+            }
+            onClick={() => setImagenActual(1)}
+          ></button>
+          <button
+            className={
+              imagenActual === 2
+                ? "w-3 h-3 rounded-full shadow-md bg-[#8c3cfc ] hover:bg-gray-200"
+                : "w-3 h-3 rounded-full shadow-md bg-gray-100 hover:bg-gray-200"
+            }
+            onClick={() => setImagenActual(2)}
+          ></button>
         </div>
       </div>
     </>
