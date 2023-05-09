@@ -31,15 +31,14 @@ function CarruselAmazing() {
 
   return (
     <div className="relative transform overflow-hidden min-w-xl rounded-lg bg-white text-left shadow-xl p-12 transition-all sm:w-full">
-      <div className="mx-auto max-w-xl text-center py-8">
-        <h2 className="text-4xl font-bold sm:text-5xl">
-          Carrusel Amazing con React + Taiwind
-        </h2>
-
-        <p className="mt-4 text-gray-500">
-          Un componente hecho en react para un carrusel de imagenes.
-        </p>
-      </div>
+       <div className="mx-auto text-center py-8">
+          <h1 class="font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
+            Carrusel escaparate con React + Tailwind
+          </h1>
+          <p className="mt-4 text-sm text-gray-600">
+            Un componente para carrusel escaparate de imagenes, hecho con React y Tailwind
+          </p>
+        </div>
       <div className="flex h-full w-full items-center justify-center">
         <div className="w-[1200px] max-w-full">
           <ul
@@ -61,7 +60,7 @@ function CarruselAmazing() {
               >
                 <div className="relative h-full w-full overflow-hidden rounded-2xl bg-[#c9c6c7]">
                   <img
-                    className="absolute right-0 top-1/2 h-auto w-24 max-w-none -translate-y-1/2 object-cover grayscale md:left-1/2 md:h-[640px] md:w-[590px] md:-translate-x-1/2"
+                    className="absolute right-0 top-1/2 h-auto w-24 max-w-none -translate-y-1/2 object-cover md:left-1/2 md:h-[640px] md:w-[590px] md:-translate-x-1/2"
                     src={person.img}
                     alt={person.name}
                     width="590px"
@@ -81,10 +80,10 @@ function CarruselAmazing() {
                         : "md:translate-x-4 md:opacity-0"
                     )}
                   >
-                    <p className="text-sm uppercase text-primary md:text-lg">
+                    <p className="text-sm text-whiteuppercase text-primary md:text-lg">
                       {person.title}
                     </p>
-                    <p className="text-lg font-bold md:text-4xl">
+                    <p className="text-lg text-white font-bold md:text-4xl">
                       {person.name}
                     </p>
                   </div>

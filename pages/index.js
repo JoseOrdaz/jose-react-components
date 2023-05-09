@@ -1,12 +1,12 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Carousel from "../src/components/carrusel/Carousel";
+import Carrusel from "../src/components/Carrusel/Carrusel";
 import LayoutWrapper from "../components/LayoutWrapper";
 import Codemirror from "../src/components/codemirror/Codemirror";
 import React, { useState } from "react";
 import { sample } from "../src/components/codemirror/components";
-import Accordion from "../src/components/accordion/Accordion";
 import CarruselAmazing from "../src/components/CarruselAmazing/CarruselAmazing.tsx";
+import BuscadorPeliculas from "../src/components/BuscadorPeliculas/BuscadorPeliculas";
 
 export default function Home() {
   const [language, changeLanguage] = useState("jsx");
@@ -21,9 +21,10 @@ export default function Home() {
       </Head>
       <LayoutWrapper></LayoutWrapper>
 
-      <div className="bg-gradient-to-r from-[#3163fa] via-[#8c3cfc] to-slate-900">
+      <div className="bg-gradient-to-r bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
+
         <div className="max-w-6xl mx-auto py-12">
-          <Carousel />
+          <Carrusel />
 
           <details className="w-full mt-10  shadow-xl font-semibold text-[#8c3cfc ] hover:text-black cursor-pointer hover:bg-gray-100 bg-white rounded-lg ring-1 ring-[#8c3cfc ]">
             <summary className="px-4 py-6">
@@ -63,7 +64,7 @@ export default function Home() {
               Click aquí para ver el código del componente
             </summary>
             <div className="px-4 py-6 pt-0 -mt-4">
-              <Codemirror language={language} CarruselCode={CarruselCode} />
+              <Codemirror language={language} CarruselCode="" />
             </div>
           </details>
           <div class="relative flex pt-24 items-center">
@@ -87,6 +88,40 @@ export default function Home() {
             <div class="flex-grow border-t border-white"></div>
           </div>
         </div>
+
+        <div className="max-w-6xl mx-auto py-12">
+          <BuscadorPeliculas />
+
+          <details className="w-full mt-10  shadow-xl font-semibold text-[#8c3cfc ] hover:text-black cursor-pointer hover:bg-gray-100 bg-white rounded-lg ring-1 ring-[#8c3cfc ]">
+            <summary className="px-4 py-6">
+              Click aquí para ver el código del componente
+            </summary>
+            <div className="px-4 py-6 pt-0 -mt-4">
+              <Codemirror language={language} CarruselCode="" />
+            </div>
+          </details>
+          <div class="relative flex pt-24 items-center">
+            <div class="flex-grow border-t border-white"></div>
+            <span class="flex-shrink mx-4 text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"
+                />
+              </svg>
+            </span>
+            <div class="flex-grow border-t border-white"></div>
+          </div>
+        </div>
+
       </div>
 
       <footer className={styles.footer}>
